@@ -1,0 +1,26 @@
+@use 'reset';
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;500;700&display=swap');
+
+$shadow: rgba(0, 0, 0, 0.1);
+
+body {
+  background-color: #eee;
+  font-family: 'Poppins', sans-serif;
+}
+
+.container {
+  width: 960px;
+  margin: auto;
+  padding: 10px;
+  background-color: #fff;
+
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+}
+
+.shadow {
+  -webkit-box-shadow: 3px 3px 5px 6px $shadow;  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
+  -moz-box-shadow:    3px 3px 5px 6px $shadow;  /* Firefox 3.5 - 3.6 */
+  box-shadow:         3px 3px 5px 6px $shadow;  /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */
+}
