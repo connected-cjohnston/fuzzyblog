@@ -24,3 +24,24 @@ body {
   -moz-box-shadow:    3px 3px 5px 6px $shadow;  /* Firefox 3.5 - 3.6 */
   box-shadow:         3px 3px 5px 6px $shadow;  /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */
 }
+
+form {
+  padding: 5px;
+}
+label {
+  display: block;
+  margin-top: 20px;
+}
+
+input {
+  width: 90%;
+}
+
+textarea {
+  width: 90%;
+  height: 350px;
+}
+
+input[type='submit'] {
+  width: 100px;
+}
