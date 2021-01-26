@@ -27,6 +27,7 @@ group :development, :test do
 end
 
 group :development do
+  gem "capistrano", "~> 3.14", require: false
   gem 'htmlbeautifier'
   gem 'listen', '~> 3.3'
   gem 'rack-mini-profiler', '~> 2.0'
