@@ -128,7 +128,7 @@ resource "aws_instance" "fuzzyblog-web" {
   ami               = "ami-0a91cd140a1fc148a"
   instance_type     = "t2.micro"
   availability_zone = "us-east-2a"
-  key_name          = "main-aws-access-key"
+  key_name          = "aws-rails-access-key"
   network_interface {
     device_index         = 0
     network_interface_id = aws_network_interface.prod.id

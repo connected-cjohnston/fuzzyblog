@@ -45,3 +45,6 @@ yarn-debug.log*
 
 # Ignore access pem files
 *.pem
+
+# OSX System Files
+.DS_Store
