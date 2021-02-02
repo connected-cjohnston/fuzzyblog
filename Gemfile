@@ -27,6 +27,8 @@ group :development, :test do
 end
 
 group :development do
+  gem 'ed25519', '>= 1.2', '< 2.0'
+  gem 'bcrypt_pbkdf', '>= 1.0', '< 2.0'
   gem 'capistrano', '~> 3.14', require: false
   gem 'capistrano-rails', '~>1.6.1', require: false
   gem 'capistrano-rbenv', '~>2.2.0', require: false

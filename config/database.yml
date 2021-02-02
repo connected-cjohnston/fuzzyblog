@@ -10,3 +10,5 @@ test:
 production:
   <<: *default
   database: fuzzyblog_production
+  username: deploy
+  password: Rails.application.credentials.dig(:production, :db_password)
