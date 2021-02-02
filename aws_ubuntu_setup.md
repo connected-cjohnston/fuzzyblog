@@ -56,13 +56,13 @@ sudo vim /etc/nginx/conf.d/mod-http-passenger.conf
 replace free ruby version with: passenger_ruby /home/deploy/.rbenv/shims/ruby;
 
 # Configure NGINX
-sudo vim /etc/nginx/sites-enabled/aws-rails.com
+sudo vim /etc/nginx/sites-enabled/fuzzyblog.com
 server {
   listen 80;
   listen [::]:80;
 
-  server_name aws-rails.com;
-  root /home/deploy/aws_rails/current/public;
+  server_name fuzzyblog.com;
+  root /home/deploy/fuzzyblog/current/public;
 
   passenger_enabled on;
   passenger_app_env production;

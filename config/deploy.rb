@@ -1,8 +1,5 @@
-# config valid for current version and patch releases of Capistrano
-lock '~> 3.15.0'
-
 set :application, 'fuzzyblog'
-set :repo_url, ''
+set :repo_url, 'git@github.com:connected-cjohnston/fuzzyblog.git'
 set :deploy_to, '/home/deploy/fuzzyblog'
 
 set :linked_files, %w[config/database.yml config/master.key]
