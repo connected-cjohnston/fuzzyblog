@@ -147,3 +147,14 @@ resource "aws_instance" "fuzzyblog-web" {
     Owner = "Chris Johnston"
   }
 }
+
+# Create S3 Bucket
+resource "aws_s3_bucket" "fuzzyblog-s3-bucket" {
+  bucket = "fuzzyblog-images"
+  acl    = "private"
+
+  tags = {
+    Name        = "fuzzyblog-prod-s3-images"
+    Environment = "Prod"
+  }
+}

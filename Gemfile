@@ -18,6 +18,10 @@ gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.7'
 
+gem 'active_storage_validations'
+gem 'aws-sdk-s3', require: false
+gem 'image_processing', '~> 1.12'
+
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
 
@@ -27,11 +31,11 @@ group :development, :test do
 end
 
 group :development do
-  gem 'ed25519', '>= 1.2', '< 2.0'
   gem 'bcrypt_pbkdf', '>= 1.0', '< 2.0'
   gem 'capistrano', '~> 3.14', require: false
   gem 'capistrano-rails', '~>1.6.1', require: false
   gem 'capistrano-rbenv', '~>2.2.0', require: false
+  gem 'ed25519', '>= 1.2', '< 2.0'
   gem 'htmlbeautifier'
   gem 'listen', '~> 3.3'
   gem 'rack-mini-profiler', '~> 2.0'
