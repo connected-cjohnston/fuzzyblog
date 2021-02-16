@@ -2,6 +2,15 @@
 <%= link_to 'New Article', new_article_path %>
 
 <% @articles.each do |article| %>
-  <h2><%= link_to article.title, article %></h2>
-  <p><%= article.body %></p>
+  <div class='article_block'>
+    <h2>
+      <%= link_to article.title, article %>
+    </h2>
+    <% if article.article_image.persisted?%>
+      <%= image_tag(article.article_image.variant(resize_to_limit: [700, 700])) %>
+    <% end %>
+    <p>
+      <%= raw @markdown.render(article.body) %>
+    </p>
+  <div>
 <% end %>

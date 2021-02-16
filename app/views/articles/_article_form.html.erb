@@ -8,6 +8,10 @@
     <%= f.text_area :body %>
   </div>
   <div>
+    <%= f.label :article_image, 'Article Image' %>
+    <%= f.file_field :article_image %>
+  </div>
+  <div>
     <%= f.submit "Submit", disable_with: 'Submiting...' %>
   </div>
 <% end %>
