@@ -2,6 +2,10 @@
 
 <h1><%= @article.title %></h1>
 
+<% if @article.article_image.persisted?%>
+  <%= image_tag(@article.article_image.variant(resize_to_limit: [900, 500])) %>
+<% end %>
+
 <p>
-  <%= @article.body %>
+  <%= raw @markdown.render(@article.body) %>
 </p>
