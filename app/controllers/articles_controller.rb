@@ -1,12 +1,12 @@
 class ArticlesController < ApplicationController
   def index
     @articles = Article.all.order(created_at: :desc)
-    @markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML)
+    markdown_renderer
   end
 
   def show
     @article = Article.find(params[:id])
-    @markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML)
+    markdown_renderer
   end
 
   def new
@@ -39,5 +39,9 @@ class ArticlesController < ApplicationController
 
   def article_params
     params.require(:article).permit(:title, :body, :article_image)
+  end
+
+  def markdown_renderer
+    @markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML)
   end
 end
