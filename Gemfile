@@ -24,6 +24,8 @@ gem 'image_processing', '~> 1.12'
 
 gem 'redcarpet'
 
+gem 'clearance'
+
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
 
