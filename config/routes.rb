@@ -3,5 +3,7 @@ Rails.application.routes.draw do
 
   resources :articles
 
+  resources :admin, only: [:index]
+
   root 'articles#index'
 end
