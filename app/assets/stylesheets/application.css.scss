@@ -34,7 +34,15 @@ label {
 }
 
 input {
+  margin: 5px;
+  height: 1.75rem;
   width: 90%;
+  padding: 4px;
+
+  -moz-border-radius: 7px;
+  -webkit-border-radius: 7px;
+  border-radius: 7px;
+  border: 1px solid gray;
 }
 
 textarea {
