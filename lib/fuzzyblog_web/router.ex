@@ -18,6 +18,7 @@ defmodule FuzzyblogWeb.Router do
     pipe_through :browser
 
     get "/", PageController, :home
+    get("/articles", ArticleController, :index)
   end
 
   # Other scopes may use custom stacks.

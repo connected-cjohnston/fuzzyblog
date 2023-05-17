@@ -3,3 +3,14 @@
 @import "tailwindcss/utilities";
 
 /* This file is for your main application CSS */
+h1 {
+  @apply text-5xl pt-5 pb-10
+}
+
+h2 {
+  @apply text-2xl pt-5 pb-3 font-semibold
+}
+
+p {
+  @apply text-base
+}
