@@ -1,8 +1,10 @@
 defmodule FuzzyblogWeb.ArticlesController do
+  @moduledoc """
+  ReST functions for Article resource
+  """
   use FuzzyblogWeb, :controller
 
   alias Fuzzyblog.Articles.Article
-  alias Fuzzyblog.Repo
 
   @doc """
   # GET /articles
@@ -35,7 +37,7 @@ defmodule FuzzyblogWeb.ArticlesController do
     article = %{title: title, summary: summary, body: body}
 
     case Fuzzyblog.Articles.create_article(article) do
-      {:ok, article} ->
+      {:ok, _new_article} ->
         conn
         |> put_flash(:info, "Article successfully created")
         |> redirect(to: ~p"/articles")
@@ -44,7 +46,10 @@ defmodule FuzzyblogWeb.ArticlesController do
         IO.puts(inspect(changeset))
 
         conn
-        |> put_flash(:error, "Something went wrong, please try again")
+        |> put_flash(
+          :error,
+          "Something went wrong, please try again\n#{inspect(changeset.errors)}"
+        )
         |> render(:new, changeset: changeset)
     end
   end
