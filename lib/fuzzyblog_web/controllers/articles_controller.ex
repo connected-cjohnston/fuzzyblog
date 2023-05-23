@@ -32,11 +32,20 @@ defmodule FuzzyblogWeb.ArticlesController do
   POST /articles/
   """
   def create(conn, %{"article" => %{"body" => body, "summary" => summary, "title" => title}}) do
-    article = %Article{title: title, summary: summary, body: body}
-    Repo.insert(article)
+    article = %{title: title, summary: summary, body: body}
 
-    conn
-    |> put_flash(:info, "Article successfully created")
-    |> redirect(to: ~p"/articles")
+    case Fuzzyblog.Articles.create_article(article) do
+      {:ok, article} ->
+        conn
+        |> put_flash(:info, "Article successfully created")
+        |> redirect(to: ~p"/articles")
+
+      {:error, changeset} ->
+        IO.puts(inspect(changeset))
+
+        conn
+        |> put_flash(:error, "Something went wrong, please try again")
+        |> render(:new, changeset: changeset)
+    end
   end
 end

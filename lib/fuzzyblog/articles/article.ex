@@ -18,6 +18,6 @@ defmodule Fuzzyblog.Articles.Article do
   def changeset(article, attrs \\ %{}) do
     article
     |> cast(attrs, [:title, :body, :summary, :image])
-    |> validate_required([:title, :body, :summary, :image])
+    |> validate_required([:title, :body])
   end
 end
