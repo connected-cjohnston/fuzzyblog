@@ -1,6 +1,9 @@
 defmodule FuzzyblogWeb.ArticlesController do
   use FuzzyblogWeb, :controller
 
+  alias Fuzzyblog.Articles.Article
+  alias Fuzzyblog.Repo
+
   @doc """
   # GET /articles
   """
@@ -21,6 +24,19 @@ defmodule FuzzyblogWeb.ArticlesController do
   GET /articles/new
   """
   def new(conn, _params) do
-    render(conn, :new)
+    changeset = Article.changeset(%Article{})
+    render(conn, :new, changeset: changeset)
+  end
+
+  @doc """
+  POST /articles/
+  """
+  def create(conn, %{"article" => %{"body" => body, "summary" => summary, "title" => title}}) do
+    article = %Article{title: title, summary: summary, body: body}
+    Repo.insert(article)
+
+    conn
+    |> put_flash(:info, "Article successfully created")
+    |> redirect(to: ~p"/articles")
   end
 end

@@ -3,7 +3,7 @@
 
 <%= for article <- @articles do %>
   <h2>
-    <.link href={~p"/articles/1"}><%= article.title %></.link>
+    <.link href={~p"/articles/#{article.id}"}><%= article.title %></.link>
   </h2>
   <%= article.body %>
 <% end %>
