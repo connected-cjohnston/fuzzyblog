@@ -1,4 +1,7 @@
 defmodule Fuzzyblog.Articles.Article do
+  @moduledoc """
+  Schema file for Article model
+  """
   use Ecto.Schema
   import Ecto.Changeset
 

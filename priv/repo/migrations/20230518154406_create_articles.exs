@@ -4,7 +4,7 @@ defmodule Fuzzyblog.Repo.Migrations.CreateArticles do
   def change do
     create table(:articles) do
       add(:title, :string)
-      add(:body, :string)
+      add(:body, :text)
       add(:summary, :string)
       add(:image, :string)
 

@@ -1,6 +1,7 @@
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
+@import "tailwindcss/forms";
 
 /* This file is for your main application CSS */
 h1 {
@@ -13,4 +14,20 @@ h2 {
 
 p {
   @apply text-base
+}
+
+a {
+  @apply underline text-blue-700 hover:bg-yellow-200
+}
+
+label {
+  @apply block text-gray-700 font-medium
+}
+
+.input {
+  @apply w-full rounded-lg border-gray-400 shadow-sm
+}
+
+button {
+  @apply border border-gray-300 bg-blue-200 px-3 py-2 rounded-lg shadow-sm float-right
 }
